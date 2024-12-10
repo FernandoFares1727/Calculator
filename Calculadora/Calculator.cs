@@ -1,4 +1,4 @@
-namespace Calculadora
+﻿namespace Calculadora
 {
     public partial class Calculator : Form
     {
@@ -24,7 +24,7 @@ namespace Calculadora
 
         private void deleteButton_Click(Object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(resultTextBox.Text)) // Verifica se o texto n�o est� vazio
+            if (!string.IsNullOrEmpty(resultTextBox.Text)) // Verifica se o texto não está vazio
             {
                 resultTextBox.Text = resultTextBox.Text.Remove(resultTextBox.Text.Length - 1);
             }
@@ -37,7 +37,7 @@ namespace Calculadora
                 // Captura o texto da TextBox
                 string expressao = resultTextBox.Text;
 
-                // Avalia a express�o matem�tica
+                // Avalia a expressão matemática
                 var resultado = CalcularExpressao(expressao);
 
                 // Mostra o resultado na TextBox
@@ -51,15 +51,19 @@ namespace Calculadora
 
         private double CalcularExpressao(string expressao)
         {
+            // Substitui o operador de potência
             expressao = SubstituirPotencia(expressao);
 
-            // Usa DataTable para calcular a express�o
+            // Substitui a raiz quadrada
+            expressao = SubstituirRaizQuadrada(expressao);
+
+            // Usa DataTable para calcular a expressão
             System.Data.DataTable tabela = new System.Data.DataTable();
             tabela.Columns.Add("Expressao", typeof(string), expressao);
             System.Data.DataRow linha = tabela.NewRow();
             tabela.Rows.Add(linha);
 
-            // Retorna o valor calculado
+            // Calcula e arredonda o valor final em até 4 casas decimais
             return double.Parse((string)linha["Expressao"]);
         }
 
@@ -67,10 +71,10 @@ namespace Calculadora
         {
             while (expressao.Contains("^"))
             {
-                // Localiza a posi��o do operador `^`
+                // Localiza a posição do operador `^`
                 int index = expressao.IndexOf("^");
 
-                // Identifica o operando � esquerda
+                // Identifica o operando à esquerda
                 int start = index - 1;
                 while (start >= 0 && (char.IsDigit(expressao[start]) || expressao[start] == '.'))
                 {
@@ -78,7 +82,7 @@ namespace Calculadora
                 }
                 start++;
 
-                // Identifica o operando � direita
+                // Identifica o operando à direita
                 int end = index + 1;
                 while (end < expressao.Length && (char.IsDigit(expressao[end]) || expressao[end] == '.'))
                 {
@@ -89,13 +93,41 @@ namespace Calculadora
                 string baseValue = expressao.Substring(start, index - start);
                 string exponent = expressao.Substring(index + 1, end - index - 1);
 
-                // Substitui na express�o
+                // Substitui na expressão
                 string potencia = Math.Pow(double.Parse(baseValue), double.Parse(exponent)).ToString();
                 expressao = expressao.Substring(0, start) + potencia + expressao.Substring(end);
             }
 
             return expressao;
         }
+
+        private string SubstituirRaizQuadrada(string expressao)
+        {
+            while (expressao.Contains("√"))
+            {
+                // Localiza a posição do operador `√`
+                int index = expressao.IndexOf("√");
+
+                // Identifica o operando à direita da raiz
+                int end = index + 1;
+                while (end < expressao.Length && (char.IsDigit(expressao[end]) || expressao[end] == '.'))
+                {
+                    end++;
+                }
+
+                // Extrai o operando
+                string valor = expressao.Substring(index + 1, end - index - 1);
+
+                // Calcula a raiz quadrada
+                string raiz = Math.Sqrt(double.Parse(valor)).ToString().Replace(',','.');
+
+                // Substitui na expressão
+                expressao = expressao.Substring(0, index) + raiz + expressao.Substring(end);
+            }
+
+            return expressao;
+        }
+
 
 
         private void resetTextBox_Click(object sender, EventArgs e)

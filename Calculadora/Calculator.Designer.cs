@@ -50,6 +50,7 @@ namespace Calculadora
             resetTextBoxButton = new Button();
             bracketButton = new Button();
             elevButton = new Button();
+            rootButton = new Button();
             SuspendLayout();
             // 
             // button0
@@ -231,7 +232,7 @@ namespace Calculadora
             // 
             // resetTextBoxButton
             // 
-            resetTextBoxButton.Location = new Point(20, 152);
+            resetTextBoxButton.Location = new Point(203, 102);
             resetTextBoxButton.Name = "resetTextBoxButton";
             resetTextBoxButton.Size = new Size(55, 44);
             resetTextBoxButton.TabIndex = 18;
@@ -259,11 +260,22 @@ namespace Calculadora
             elevButton.UseVisualStyleBackColor = true;
             elevButton.Click += addOperation_Click;
             // 
+            // rootButton
+            // 
+            rootButton.Location = new Point(20, 152);
+            rootButton.Name = "rootButton";
+            rootButton.Size = new Size(55, 44);
+            rootButton.TabIndex = 21;
+            rootButton.Text = "√";
+            rootButton.UseVisualStyleBackColor = true;
+            rootButton.Click += addOperation_Click;
+            // 
             // Calculator
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(280, 403);
+            Controls.Add(rootButton);
             Controls.Add(elevButton);
             Controls.Add(bracketButton);
             Controls.Add(resetTextBoxButton);
@@ -316,5 +328,6 @@ namespace Calculadora
         private Button resetTextBoxButton;
         private Button bracketButton;
         private Button elevButton;
+        private Button rootButton;
     }
 }

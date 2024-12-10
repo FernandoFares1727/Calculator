@@ -57,7 +57,7 @@ namespace Calculadora
             button0.TabIndex = 0;
             button0.Text = "0";
             button0.UseVisualStyleBackColor = true;
-            button0.Click += button0_Click_1;
+            button0.Click += addOperation_Click;
             // 
             // button1
             // 
@@ -67,7 +67,7 @@ namespace Calculadora
             button1.TabIndex = 1;
             button1.Text = "1";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            button1.Click += addOperation_Click;
             // 
             // button2
             // 
@@ -77,7 +77,7 @@ namespace Calculadora
             button2.TabIndex = 2;
             button2.Text = "2";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            button2.Click += addOperation_Click;
             // 
             // button3
             // 
@@ -87,7 +87,7 @@ namespace Calculadora
             button3.TabIndex = 3;
             button3.Text = "3";
             button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            button3.Click += addOperation_Click;
             // 
             // dotButton
             // 
@@ -97,7 +97,7 @@ namespace Calculadora
             dotButton.TabIndex = 4;
             dotButton.Text = ".";
             dotButton.UseVisualStyleBackColor = true;
-            dotButton.Click += dotButton_Click;
+            dotButton.Click += addOperation_Click;
             // 
             // deleteButton
             // 
@@ -127,7 +127,7 @@ namespace Calculadora
             addButton.TabIndex = 7;
             addButton.Text = "+";
             addButton.UseVisualStyleBackColor = true;
-            addButton.Click += addButton_Click;
+            addButton.Click += addOperation_Click;
             // 
             // subButton
             // 
@@ -137,7 +137,7 @@ namespace Calculadora
             subButton.TabIndex = 8;
             subButton.Text = "-";
             subButton.UseVisualStyleBackColor = true;
-            subButton.Click += subButton_Click;
+            subButton.Click += addOperation_Click;
             // 
             // prodButton
             // 
@@ -147,7 +147,7 @@ namespace Calculadora
             prodButton.TabIndex = 9;
             prodButton.Text = "*";
             prodButton.UseVisualStyleBackColor = true;
-            prodButton.Click += prodButton_Click;
+            prodButton.Click += addOperation_Click;
             // 
             // divButton
             // 
@@ -157,7 +157,7 @@ namespace Calculadora
             divButton.TabIndex = 10;
             divButton.Text = "/";
             divButton.UseVisualStyleBackColor = true;
-            divButton.Click += divButton_Click;
+            divButton.Click += addOperation_Click;
             // 
             // button6
             // 
@@ -167,7 +167,7 @@ namespace Calculadora
             button6.TabIndex = 13;
             button6.Text = "6";
             button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
+            button6.Click += addOperation_Click;
             // 
             // button5
             // 
@@ -177,7 +177,7 @@ namespace Calculadora
             button5.TabIndex = 12;
             button5.Text = "5";
             button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            button5.Click += addOperation_Click;
             // 
             // button4
             // 
@@ -187,7 +187,7 @@ namespace Calculadora
             button4.TabIndex = 11;
             button4.Text = "4";
             button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            button4.Click += addOperation_Click;
             // 
             // button9
             // 
@@ -197,7 +197,7 @@ namespace Calculadora
             button9.TabIndex = 16;
             button9.Text = "9";
             button9.UseVisualStyleBackColor = true;
-            button9.Click += button9_Click;
+            button9.Click += addOperation_Click;
             // 
             // button8
             // 
@@ -207,7 +207,7 @@ namespace Calculadora
             button8.TabIndex = 15;
             button8.Text = "8";
             button8.UseVisualStyleBackColor = true;
-            button8.Click += button8_Click;
+            button8.Click += addOperation_Click;
             // 
             // button7
             // 
@@ -217,7 +217,7 @@ namespace Calculadora
             button7.TabIndex = 14;
             button7.Text = "7";
             button7.UseVisualStyleBackColor = true;
-            button7.Click += button7_Click;
+            button7.Click += addOperation_Click;
             // 
             // resultTextBox
             // 

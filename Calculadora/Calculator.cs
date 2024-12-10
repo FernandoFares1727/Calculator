@@ -13,14 +13,11 @@ namespace Calculadora
 
         }
 
-        private void button0_Click_1(object sender, EventArgs e)
+        private void addOperation_Click(object sender, EventArgs e)
         {
-            resultTextBox.Text += button0.Text;
-        }
-
-        private void dotButton_Click(object sender, EventArgs e)
-        {
-            resultTextBox.Text += dotButton.Text;
+            Button button = sender as Button;
+            if (button != null)
+                resultTextBox.Text += button.Text;
         }
 
         private void deleteButton_Click(Object sender, EventArgs e)
@@ -29,71 +26,6 @@ namespace Calculadora
             {
                 resultTextBox.Text = resultTextBox.Text.Remove(resultTextBox.Text.Length - 1);
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            resultTextBox.Text += button1.Text;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            resultTextBox.Text += button2.Text;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            resultTextBox.Text += button3.Text;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            resultTextBox.Text += button4.Text;
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            resultTextBox.Text += button5.Text;
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            resultTextBox.Text += button6.Text;
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            resultTextBox.Text += button7.Text;
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            resultTextBox.Text += button8.Text;
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            resultTextBox.Text += button9.Text;
-        }
-
-        private void addButton_Click(object sender, EventArgs e)
-        {
-            resultTextBox.Text += addButton.Text;
-        }
-
-        private void subButton_Click(object sender, EventArgs e)
-        {
-            resultTextBox.Text += subButton.Text;
-        }
-
-        private void prodButton_Click(Object sender, EventArgs e)
-        {
-            resultTextBox.Text += prodButton.Text;
-        }
-
-        private void divButton_Click(Object sender, EventArgs e)
-        {
-            resultTextBox.Text += divButton.Text;
         }
 
         private void resultButton_Click(Object sender, EventArgs e)

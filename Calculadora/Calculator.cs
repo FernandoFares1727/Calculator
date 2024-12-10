@@ -2,6 +2,8 @@ namespace Calculadora
 {
     public partial class Calculator : Form
     {
+        private readonly char leftBracket = '(';
+        private readonly char rightBracket = ')';
 
         public Calculator()
         {
@@ -39,7 +41,7 @@ namespace Calculadora
                 var resultado = CalcularExpressao(expressao);
 
                 // Mostra o resultado na TextBox
-                resultTextBox.Text = resultado.ToString().Replace(',','.');
+                resultTextBox.Text = resultado.ToString().Replace(',', '.');
             }
             catch (Exception ex)
             {
@@ -49,6 +51,8 @@ namespace Calculadora
 
         private double CalcularExpressao(string expressao)
         {
+            expressao = SubstituirPotencia(expressao);
+
             // Usa DataTable para calcular a expressão
             System.Data.DataTable tabela = new System.Data.DataTable();
             tabela.Columns.Add("Expressao", typeof(string), expressao);
@@ -57,6 +61,58 @@ namespace Calculadora
 
             // Retorna o valor calculado
             return double.Parse((string)linha["Expressao"]);
+        }
+
+        private string SubstituirPotencia(string expressao)
+        {
+            while (expressao.Contains("^"))
+            {
+                // Localiza a posição do operador `^`
+                int index = expressao.IndexOf("^");
+
+                // Identifica o operando à esquerda
+                int start = index - 1;
+                while (start >= 0 && (char.IsDigit(expressao[start]) || expressao[start] == '.'))
+                {
+                    start--;
+                }
+                start++;
+
+                // Identifica o operando à direita
+                int end = index + 1;
+                while (end < expressao.Length && (char.IsDigit(expressao[end]) || expressao[end] == '.'))
+                {
+                    end++;
+                }
+
+                // Extrai os operandos
+                string baseValue = expressao.Substring(start, index - start);
+                string exponent = expressao.Substring(index + 1, end - index - 1);
+
+                // Substitui na expressão
+                string potencia = Math.Pow(double.Parse(baseValue), double.Parse(exponent)).ToString();
+                expressao = expressao.Substring(0, start) + potencia + expressao.Substring(end);
+            }
+
+            return expressao;
+        }
+
+
+        private void resetTextBox_Click(object sender, EventArgs e)
+        {
+            resultTextBox.Text = string.Empty;
+        }
+
+        private void bracketButton_Click(object sender, EventArgs e)
+        {
+            var leftBracketCount = resultTextBox.Text.Count(x => x == leftBracket);
+            var rightBracketCount = resultTextBox.Text.Count(x => x == rightBracket);
+
+            var diff = leftBracketCount - rightBracketCount;
+
+            resultTextBox.Text += diff == 0 
+                ? leftBracket
+                : rightBracket;
         }
     }
 }

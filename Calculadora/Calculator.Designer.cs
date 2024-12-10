@@ -47,13 +47,16 @@ namespace Calculadora
             button8 = new Button();
             button7 = new Button();
             resultTextBox = new TextBox();
+            resetTextBoxButton = new Button();
+            bracketButton = new Button();
+            elevButton = new Button();
             SuspendLayout();
             // 
             // button0
             // 
-            button0.Location = new Point(17, 360);
+            button0.Location = new Point(20, 349);
             button0.Name = "button0";
-            button0.Size = new Size(51, 34);
+            button0.Size = new Size(55, 44);
             button0.TabIndex = 0;
             button0.Text = "0";
             button0.UseVisualStyleBackColor = true;
@@ -61,9 +64,9 @@ namespace Calculadora
             // 
             // button1
             // 
-            button1.Location = new Point(17, 320);
+            button1.Location = new Point(20, 302);
             button1.Name = "button1";
-            button1.Size = new Size(51, 34);
+            button1.Size = new Size(55, 44);
             button1.TabIndex = 1;
             button1.Text = "1";
             button1.UseVisualStyleBackColor = true;
@@ -71,9 +74,9 @@ namespace Calculadora
             // 
             // button2
             // 
-            button2.Location = new Point(74, 320);
+            button2.Location = new Point(81, 302);
             button2.Name = "button2";
-            button2.Size = new Size(51, 34);
+            button2.Size = new Size(55, 44);
             button2.TabIndex = 2;
             button2.Text = "2";
             button2.UseVisualStyleBackColor = true;
@@ -81,9 +84,9 @@ namespace Calculadora
             // 
             // button3
             // 
-            button3.Location = new Point(131, 320);
+            button3.Location = new Point(142, 302);
             button3.Name = "button3";
-            button3.Size = new Size(51, 34);
+            button3.Size = new Size(55, 44);
             button3.TabIndex = 3;
             button3.Text = "3";
             button3.UseVisualStyleBackColor = true;
@@ -91,9 +94,9 @@ namespace Calculadora
             // 
             // dotButton
             // 
-            dotButton.Location = new Point(74, 360);
+            dotButton.Location = new Point(81, 349);
             dotButton.Name = "dotButton";
-            dotButton.Size = new Size(51, 34);
+            dotButton.Size = new Size(55, 44);
             dotButton.TabIndex = 4;
             dotButton.Text = ".";
             dotButton.UseVisualStyleBackColor = true;
@@ -101,9 +104,9 @@ namespace Calculadora
             // 
             // deleteButton
             // 
-            deleteButton.Location = new Point(131, 360);
+            deleteButton.Location = new Point(142, 349);
             deleteButton.Name = "deleteButton";
-            deleteButton.Size = new Size(51, 34);
+            deleteButton.Size = new Size(55, 44);
             deleteButton.TabIndex = 5;
             deleteButton.Text = "X";
             deleteButton.UseVisualStyleBackColor = true;
@@ -111,9 +114,9 @@ namespace Calculadora
             // 
             // resultButton
             // 
-            resultButton.Location = new Point(188, 360);
+            resultButton.Location = new Point(203, 349);
             resultButton.Name = "resultButton";
-            resultButton.Size = new Size(51, 34);
+            resultButton.Size = new Size(55, 44);
             resultButton.TabIndex = 6;
             resultButton.Text = "=";
             resultButton.UseVisualStyleBackColor = true;
@@ -121,9 +124,9 @@ namespace Calculadora
             // 
             // addButton
             // 
-            addButton.Location = new Point(188, 320);
+            addButton.Location = new Point(203, 302);
             addButton.Name = "addButton";
-            addButton.Size = new Size(51, 34);
+            addButton.Size = new Size(55, 44);
             addButton.TabIndex = 7;
             addButton.Text = "+";
             addButton.UseVisualStyleBackColor = true;
@@ -131,9 +134,9 @@ namespace Calculadora
             // 
             // subButton
             // 
-            subButton.Location = new Point(188, 280);
+            subButton.Location = new Point(203, 252);
             subButton.Name = "subButton";
-            subButton.Size = new Size(51, 34);
+            subButton.Size = new Size(55, 44);
             subButton.TabIndex = 8;
             subButton.Text = "-";
             subButton.UseVisualStyleBackColor = true;
@@ -141,9 +144,9 @@ namespace Calculadora
             // 
             // prodButton
             // 
-            prodButton.Location = new Point(188, 240);
+            prodButton.Location = new Point(203, 202);
             prodButton.Name = "prodButton";
-            prodButton.Size = new Size(51, 34);
+            prodButton.Size = new Size(55, 44);
             prodButton.TabIndex = 9;
             prodButton.Text = "*";
             prodButton.UseVisualStyleBackColor = true;
@@ -151,9 +154,9 @@ namespace Calculadora
             // 
             // divButton
             // 
-            divButton.Location = new Point(188, 200);
+            divButton.Location = new Point(203, 152);
             divButton.Name = "divButton";
-            divButton.Size = new Size(51, 34);
+            divButton.Size = new Size(55, 44);
             divButton.TabIndex = 10;
             divButton.Text = "/";
             divButton.UseVisualStyleBackColor = true;
@@ -161,9 +164,9 @@ namespace Calculadora
             // 
             // button6
             // 
-            button6.Location = new Point(131, 280);
+            button6.Location = new Point(142, 252);
             button6.Name = "button6";
-            button6.Size = new Size(51, 34);
+            button6.Size = new Size(55, 44);
             button6.TabIndex = 13;
             button6.Text = "6";
             button6.UseVisualStyleBackColor = true;
@@ -171,9 +174,9 @@ namespace Calculadora
             // 
             // button5
             // 
-            button5.Location = new Point(74, 280);
+            button5.Location = new Point(81, 252);
             button5.Name = "button5";
-            button5.Size = new Size(51, 34);
+            button5.Size = new Size(55, 44);
             button5.TabIndex = 12;
             button5.Text = "5";
             button5.UseVisualStyleBackColor = true;
@@ -181,9 +184,9 @@ namespace Calculadora
             // 
             // button4
             // 
-            button4.Location = new Point(17, 280);
+            button4.Location = new Point(20, 252);
             button4.Name = "button4";
-            button4.Size = new Size(51, 34);
+            button4.Size = new Size(55, 44);
             button4.TabIndex = 11;
             button4.Text = "4";
             button4.UseVisualStyleBackColor = true;
@@ -191,9 +194,9 @@ namespace Calculadora
             // 
             // button9
             // 
-            button9.Location = new Point(131, 240);
+            button9.Location = new Point(142, 202);
             button9.Name = "button9";
-            button9.Size = new Size(51, 34);
+            button9.Size = new Size(55, 44);
             button9.TabIndex = 16;
             button9.Text = "9";
             button9.UseVisualStyleBackColor = true;
@@ -201,9 +204,9 @@ namespace Calculadora
             // 
             // button8
             // 
-            button8.Location = new Point(74, 240);
+            button8.Location = new Point(81, 202);
             button8.Name = "button8";
-            button8.Size = new Size(51, 34);
+            button8.Size = new Size(55, 44);
             button8.TabIndex = 15;
             button8.Text = "8";
             button8.UseVisualStyleBackColor = true;
@@ -211,9 +214,9 @@ namespace Calculadora
             // 
             // button7
             // 
-            button7.Location = new Point(17, 240);
+            button7.Location = new Point(20, 202);
             button7.Name = "button7";
-            button7.Size = new Size(51, 34);
+            button7.Size = new Size(55, 44);
             button7.TabIndex = 14;
             button7.Text = "7";
             button7.UseVisualStyleBackColor = true;
@@ -223,14 +226,47 @@ namespace Calculadora
             // 
             resultTextBox.Location = new Point(17, 12);
             resultTextBox.Name = "resultTextBox";
-            resultTextBox.Size = new Size(247, 27);
+            resultTextBox.Size = new Size(251, 27);
             resultTextBox.TabIndex = 17;
+            // 
+            // resetTextBoxButton
+            // 
+            resetTextBoxButton.Location = new Point(20, 152);
+            resetTextBoxButton.Name = "resetTextBoxButton";
+            resetTextBoxButton.Size = new Size(55, 44);
+            resetTextBoxButton.TabIndex = 18;
+            resetTextBoxButton.Text = "ESC";
+            resetTextBoxButton.UseVisualStyleBackColor = true;
+            resetTextBoxButton.Click += resetTextBox_Click;
+            // 
+            // bracketButton
+            // 
+            bracketButton.Location = new Point(142, 152);
+            bracketButton.Name = "bracketButton";
+            bracketButton.Size = new Size(55, 44);
+            bracketButton.TabIndex = 19;
+            bracketButton.Text = "( )";
+            bracketButton.UseVisualStyleBackColor = true;
+            bracketButton.Click += bracketButton_Click;
+            // 
+            // elevButton
+            // 
+            elevButton.Location = new Point(81, 152);
+            elevButton.Name = "elevButton";
+            elevButton.Size = new Size(55, 44);
+            elevButton.TabIndex = 20;
+            elevButton.Text = "^";
+            elevButton.UseVisualStyleBackColor = true;
+            elevButton.Click += addOperation_Click;
             // 
             // Calculator
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(276, 403);
+            ClientSize = new Size(280, 403);
+            Controls.Add(elevButton);
+            Controls.Add(bracketButton);
+            Controls.Add(resetTextBoxButton);
             Controls.Add(resultTextBox);
             Controls.Add(button9);
             Controls.Add(button8);
@@ -249,6 +285,7 @@ namespace Calculadora
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(button0);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Calculator";
             Text = "Calculator";
             Load += Form1_Load;
@@ -276,5 +313,8 @@ namespace Calculadora
         private Button button8;
         private Button button7;
         private TextBox resultTextBox;
+        private Button resetTextBoxButton;
+        private Button bracketButton;
+        private Button elevButton;
     }
 }

@@ -2,6 +2,7 @@
 {
     public partial class Calculator : Form
     {
+        private double lastResult = 0;
         private readonly char leftBracket = '(';
         private readonly char rightBracket = ')';
 
@@ -34,6 +35,7 @@
 
                 // Avalia a expressão matemática
                 var resultado = ResultOperations.CalcularExpressao(expressao);
+                lastResult = resultado;
 
                 // Mostra o resultado na TextBox
                 resultTextBox.Text = resultado.ToString().Replace(',', '.');
@@ -47,6 +49,7 @@
         private void resetTextBox_Click(object sender, EventArgs e)
         {
             resultTextBox.Text = string.Empty;
+            lastResult = 0;
         }
 
         private void bracketButton_Click(object sender, EventArgs e)
@@ -56,9 +59,14 @@
 
             var diff = leftBracketCount - rightBracketCount;
 
-            resultTextBox.Text += diff == 0 
+            resultTextBox.Text += diff == 0
                 ? leftBracket
                 : rightBracket;
+        }
+
+        private void lastResultButton_Click(object sender, EventArgs e)
+        {
+            resultTextBox.Text += lastResult;
         }
     }
 }

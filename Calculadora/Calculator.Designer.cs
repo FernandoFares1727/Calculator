@@ -52,6 +52,7 @@ namespace Calculadora
             elevButton = new Button();
             rootButton = new Button();
             lastResultButton = new Button();
+            piButton = new Button();
             SuspendLayout();
             // 
             // button0
@@ -233,7 +234,7 @@ namespace Calculadora
             // 
             // resetTextBoxButton
             // 
-            resetTextBoxButton.Location = new Point(142, 102);
+            resetTextBoxButton.Location = new Point(81, 102);
             resetTextBoxButton.Name = "resetTextBoxButton";
             resetTextBoxButton.Size = new Size(55, 44);
             resetTextBoxButton.TabIndex = 18;
@@ -273,7 +274,7 @@ namespace Calculadora
             // 
             // lastResultButton
             // 
-            lastResultButton.Location = new Point(203, 102);
+            lastResultButton.Location = new Point(142, 102);
             lastResultButton.Name = "lastResultButton";
             lastResultButton.Size = new Size(55, 44);
             lastResultButton.TabIndex = 22;
@@ -281,11 +282,22 @@ namespace Calculadora
             lastResultButton.UseVisualStyleBackColor = true;
             lastResultButton.Click += lastResultButton_Click;
             // 
+            // piButton
+            // 
+            piButton.Location = new Point(203, 102);
+            piButton.Name = "piButton";
+            piButton.Size = new Size(55, 44);
+            piButton.TabIndex = 23;
+            piButton.Text = "π";
+            piButton.UseVisualStyleBackColor = true;
+            piButton.Click += piButton_Click;
+            // 
             // Calculator
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(280, 403);
+            Controls.Add(piButton);
             Controls.Add(lastResultButton);
             Controls.Add(rootButton);
             Controls.Add(elevButton);
@@ -341,5 +353,6 @@ namespace Calculadora
         private Button elevButton;
         private Button rootButton;
         private Button lastResultButton;
+        private Button piButton;
     }
 }

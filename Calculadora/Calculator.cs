@@ -68,5 +68,10 @@
         {
             resultTextBox.Text += lastResult;
         }
+
+        private void piButton_Click(object sender, EventArgs e)
+        {
+            resultTextBox.Text += Math.PI;
+        }
     }
 }
